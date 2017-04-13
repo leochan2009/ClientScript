@@ -15,11 +15,10 @@ class ClientValidationObject(object):
     cmd.append('deepinfer/prostate-segmenter-cpu')
     cmd.extend(("--InputVolume", os.path.join(deepInferDir, "MRProstate.nrrd")))
     cmd.extend(("--OutputLabel", os.path.join(deepInferDir, "ResultLabel.nrrd")))
-    print "into validation", cmd
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE)
     for line in p.stdout:
       print line
     p.wait()
     shutil.copyfile(os.path.join(executeDir, "ResultLabel.nrrd"), outputLabelFile)
     shutil.rmtree(executeDir)
-    print "validataion finished"
+    print "One validataion finished"
