@@ -21,4 +21,4 @@ class ClientValidationObject(object):
     p.wait()
     shutil.copyfile(os.path.join(executeDir, "ResultLabel.nrrd"), outputLabelFile)
     shutil.rmtree(executeDir)
-    print "One validataion finished"
+    print "Validation finished"
